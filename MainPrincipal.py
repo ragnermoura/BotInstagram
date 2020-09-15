@@ -1,15 +1,12 @@
-from time import sleep
 from selenium import webdriver
+import Motor
 
-#Vai rodar o Firefox aqui!
-navegador = webdriver.Firefox()
-navegador.implicitly_wait(5)
+#<?php include(...Oops aqui não rs
 
-navegador.get('https://www.instagram.com/')
+chromedriver_path = 'C:/Users/pc/Documents/BotInstagram/chromedriver.exe'
+webdriver = webdriver.Chrome(executable_path=chromedriver_path)
 
-btnlogin = navegador.find_element_by_xpart("//a[text()='Entrar']")
-btnlogin.click
+Motor.init(webdriver)
+Motor.update(webdriver)
 
-sleep(5)
-
-navegador.close()
+webdriver.close()
