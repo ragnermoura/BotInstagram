@@ -2,10 +2,14 @@ from time import sleep
 from selenium import webdriver
 
 #Vai rodar o Firefox aqui!
-browser = webdriver.Firefox()
+navegador = webdriver.Firefox()
+navegador.implicitly_wait(5)
 
-browser.get('https://www.instagram.com/')
+navegador.get('https://www.instagram.com/')
+
+btnlogin = navegador.find_element_by_xpart("//a[text()='Entrar']")
+btnlogin.click
 
 sleep(5)
 
-browser.close()
+navegador.close()
