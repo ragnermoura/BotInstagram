@@ -65,11 +65,11 @@ def unfollow_people(webdriver, people):
 
 
 def follow_people(webdriver):
-    # all the followed user
+
     prev_user_list = DBUsers.get_followed_users()
-    # a list to store newly followed users
+
     new_followed = []
-    # counters
+
     followed = 0
     likes = 0
 
