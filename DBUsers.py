@@ -17,7 +17,7 @@ def add_user(username):
     mydb = DBManipulador.get_mydb()
     cursor = mydb.cursor()
     now = datetime.datetime.now().date()
-    cursor.execute( "INSERT INTO followed_users(username, date_added) VALUES(%s,%s)", (username, now) )
+    cursor.execute("INSERT INTO following_users(user_name, data_added) VALUES(%s,%s)", (username, now) )
     mydb.commit()
 
 
@@ -25,7 +25,7 @@ def add_user(username):
 def check_unfollow_list():
     mydb = DBManipulador.get_mydb()
     cursor = mydb.cursor()
-    cursor.execute( "SELECT * FROM followed_users" )
+    cursor.execute( "SELECT * FROM following_users" )
     results = cursor.fetchall()
     users_to_unfollow = []
     for r in results:
@@ -39,7 +39,7 @@ def get_followed_users():
     users = []
     mydb = DBManipulador.get_mydb()
     cursor = mydb.cursor()
-    cursor.execute( "SELECT * FROM followed_users" )
+    cursor.execute( "SELECT * FROM following_users" )
     results = cursor.fetchall()
     for r in results:
         users.append( r[0] )

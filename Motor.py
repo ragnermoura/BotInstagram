@@ -29,7 +29,7 @@ def update(webdriver):
 
 
 def _check_follow_list(webdriver):
-    print("Checking for users to unfollow")
+    print("Procurando usuários para parar de seguir")
     #get the unfollow list
     users = DBUsers.check_unfollow_list()
     #if there's anyone in the list, start unfollowing operation
