@@ -7,7 +7,7 @@ import constants
 def delete_user(username):
     mydb = DBManipulador.get_mydb()
     cursor = mydb.cursor()
-    sql = "DELETE FROM followed_users WHERE username = '{0}'".format( username )
+    sql = "DELETE FROM followed_users WHERE username = '{0}'".format(username)
     cursor.execute( sql )
     mydb.commit()
 
@@ -29,9 +29,9 @@ def check_unfollow_list():
     results = cursor.fetchall()
     users_to_unfollow = []
     for r in results:
-        d = Tempo.days_since_date( r[1] )
+        d = Tempo.days_since_date(r[1])
         if d > constants.DAYS_TO_UNFOLLOW:
-            users_to_unfollow.append( r[0] )
+            users_to_unfollow.append(r[0])
     return users_to_unfollow
 
 
@@ -39,9 +39,9 @@ def get_followed_users():
     users = []
     mydb = DBManipulador.get_mydb()
     cursor = mydb.cursor()
-    cursor.execute( "SELECT * FROM following_users" )
+    cursor.execute("SELECT * FROM following_users")
     results = cursor.fetchall()
     for r in results:
-        users.append( r[0] )
+        users.append(r[0])
 
     return users
