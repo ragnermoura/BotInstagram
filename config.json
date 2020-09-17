@@ -10,9 +10,9 @@
     "pass": "10minutos"
   },
   "config": {
-    "days_to_unfollow": 2,
+    "days_to_unfollow": 1,
     "likes_over": 150,
     "check_followers_every": 3600,
-    "hashtags": ["trabalho", "Familia", "Patriota51"]
+    "hashtags": ["Igreja", "Tecnologia", "carros"]
   }
 }

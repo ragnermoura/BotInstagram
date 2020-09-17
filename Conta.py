@@ -114,14 +114,14 @@ def follow_people(webdriver):
                             DBUsers.add_user( username )
                             # Click follow
                             webdriver.find_element_by_xpath(
-                                '/html/body/div[3]/div[2]/div/article/header/div[2]/div[1]/div[2]/button' ).click()
+                                '/html/body/div[4]/div[2]/div/article/header/div[2]/div[1]/div[2]/button' ).click()
                             followed += 1
                             print( "Followed: {0}, #{1}".format( username, followed ) )
                             new_followed.append( username )
 
                         #Curtindo a foto
                         button_like = webdriver.find_element_by_xpath(
-                            '/html/body/div[3]/div[2]/div/article/div[2]/section[1]/span[1]/button' )
+                            '/html/body/div[4]/div[2]/div/article/div[3]/section[1]/span[1]/button/div/span/svg' )
 
                         button_like.click()
                         likes += 1
